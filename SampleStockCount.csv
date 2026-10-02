@@ -1,0 +1,37 @@
+Sku,Description,Color,Style,Size,Category,Scanned Count,System Expected
+100001,Cotton Crewneck Tee,White,CN-TEE,S,ALL_A_Tops,22,25
+100002,Cotton Crewneck Tee,Navy,CN-TEE,M,ALL_A_Tops,4,8
+100003,Cotton Crewneck Tee,Navy,CN-TEE,L,ALL_A_Tops,11,11
+100004,Fleece Jogger,Black,FL-JOG,S,ALL_B_Bottoms,11,8
+100005,Fleece Jogger,White,FL-JOG,M,ALL_B_Bottoms,3,7
+100006,Fleece Jogger,Black,FL-JOG,L,ALL_B_Bottoms,27,31
+100007,Ribbed Tank Top,White,RB-TANK,S,ALL_C_Tops,13,10
+100008,Ribbed Tank Top,Black,RB-TANK,M,ALL_C_Tops,13,8
+100009,Ribbed Tank Top,Black,RB-TANK,L,ALL_C_Tops,24,19
+100010,Digital Watch Brand Chronograph,Black,DWB-201,S,ALL_A_Accessories,24,30
+100011,Digital Watch Brand Chronograph,Black,DWB-201,M,ALL_A_Accessories,10,7
+100012,Digital Watch Brand Chronograph,Black,DWB-201,L,ALL_A_Accessories,23,23
+100013,Skincare Brand Body Oil,Navy,SKB-050,S,ALL_C_Accessories,35,39
+100014,Skincare Brand Body Oil,Navy,SKB-050,M,ALL_C_Accessories,27,24
+100015,Skincare Brand Body Oil,Navy,SKB-050,L,ALL_C_Accessories,12,16
+100016,Enamel Ring,Black,EN-RING,S,ALL_A_Accessories,17,17
+100017,Enamel Ring,Navy,EN-RING,M,ALL_A_Accessories,36,40
+100018,Enamel Ring,Black,EN-RING,L,ALL_A_Accessories,13,8
+100019,Ringer Tee,White,RGR-TEE,S,ALL_B_Tops,39,36
+100020,Ringer Tee,Navy,RGR-TEE,M,ALL_B_Tops,26,25
+100021,Ringer Tee,White,RGR-TEE,L,ALL_B_Tops,34,34
+100022,String Bikini Top,Navy,STR-BKN,S,ALL_A_Tops,17,20
+100023,String Bikini Top,Navy,STR-BKN,M,ALL_A_Tops,16,20
+100024,String Bikini Top,White,STR-BKN,L,ALL_A_Tops,27,24
+100025,Hoop Earrings,White,HP-EAR,S,ALL_C_Accessories,27,26
+100026,Hoop Earrings,Navy,HP-EAR,M,ALL_C_Accessories,5,9
+100027,Hoop Earrings,White,HP-EAR,L,ALL_C_Accessories,28,31
+100028,Classic Sunglasses,White,CLS-SUN,S,ALL_A_Accessories,15,14
+100029,Classic Sunglasses,Navy,CLS-SUN,M,ALL_A_Accessories,3,7
+100030,Classic Sunglasses,Navy,CLS-SUN,L,ALL_A_Accessories,25,25
+100031,Seasonalbrand Lip Balm,White,SB-LIP,S,ALL_C_Accessories,32,27
+100032,Seasonalbrand Lip Balm,Black,SB-LIP,M,ALL_C_Accessories,30,34
+100033,Seasonalbrand Lip Balm,Navy,SB-LIP,L,ALL_C_Accessories,23,22
+100034,Fleece Hoodie,Navy,FL-HOOD,S,ALL_B_Tops,3,9
+100035,Fleece Hoodie,Navy,FL-HOOD,M,ALL_B_Tops,29,24
+100036,Fleece Hoodie,Navy,FL-HOOD,L,ALL_B_Tops,33,33

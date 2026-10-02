@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: 'Segoe UI', Arial, sans-serif; padding: 16px; color: #222; }
+      h3 { margin-top: 0; }
+      label { display: block; margin-top: 14px; font-size: 13px; font-weight: 600; }
+      select, input[type="number"] {
+        width: 100%; padding: 6px 8px; margin-top: 4px; box-sizing: border-box; font-size: 13px;
+      }
+      .checkbox-row { display: flex; align-items: center; margin-top: 12px; }
+      .checkbox-row input { margin-right: 8px; }
+      .checkbox-row label { margin-top: 0; font-weight: normal; }
+      button {
+        margin-top: 20px; padding: 9px 16px; font-size: 13px; font-weight: 600;
+        border: none; border-radius: 4px; cursor: pointer; background: #2d6cdf; color: white; width: 100%;
+      }
+      #status { font-size: 12px; margin-top: 10px; min-height: 32px; }
+      #status.error { color: #b00020; }
+      #status.success { color: #1a7a35; }
+      .hint { font-size: 11px; color: #666; margin-top: 3px; }
+    </style>
+  </head>
+  <body>
+    <h3>Generate Adjustment Report</h3>
+
+    <label for="categoryScope">Category scope</label>
+    <select id="categoryScope">
+      <option value="ALL">All categories</option>
+      <option value="A">Category A (e.g. Womens)</option>
+      <option value="B">Category B (e.g. Mens)</option>
+      <option value="C">Category C (e.g. Unisex)</option>
+    </select>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="accessoryDay">
+      <label for="accessoryDay">Accessory scan day (Accessories/Jewelry/Watch/Sunglasses/Hair Accessories/Health &amp; Beauty only — ignores category scope above, skips multibrand exclusion)</label>
+    </div>
+
+    <div class="checkbox-row">
+      <input type="checkbox" id="includeSeasonalBrand">
+      <label for="includeSeasonalBrand">Include the seasonal/rotating brand (on its scheduled inclusion day)</label>
+    </div>
+
+    <label for="minDisc">Minimum discrepancy to include</label>
+    <input type="number" id="minDisc" value="2" min="1" step="1">
+    <div class="hint">Rows with |Scanned Count − System Expected| below this are left out.</div>
+
+    <div id="status"></div>
+
+    <button id="runBtn" onclick="run()">Generate Report</button>
+
+    <script>
+      function run() {
+        const status = document.getElementById('status');
+        const runBtn = document.getElementById('runBtn');
+        status.className = '';
+        status.textContent = 'Processing the active sheet...';
+        runBtn.disabled = true;
+
+        const options = {
+          categoryScope: document.getElementById('categoryScope').value,
+          accessoryDay: document.getElementById('accessoryDay').checked,
+          includeSeasonalBrand: document.getElementById('includeSeasonalBrand').checked,
+          minDisc: document.getElementById('minDisc').value,
+        };
+
+        google.script.run
+          .withSuccessHandler(function (result) {
+            status.className = 'success';
+            status.textContent = `Done — ${result.rowCount} row(s) written to a new tab.`;
+            runBtn.disabled = false;
+          })
+          .withFailureHandler(function (err) {
+            status.className = 'error';
+            status.textContent = 'Error: ' + err.message;
+            runBtn.disabled = false;
+          })
+          .generateAdjustmentReport(options);
+      }
+    </script>
+  </body>
+</html>
